@@ -48,13 +48,16 @@
             });
         });
     }
+    if ([indexPath row] == ((NSIndexPath *) [[followingTableView indexPathsForVisibleRows] lastObject]).row) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }
     return cell;
 }
 
 - (void)twitterRequestDone:(NSArray *)followingArray{
     NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"username" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
     self.followings = [followingArray sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]];
-    [self.followingTableView reloadData];
+    [self.followingTableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
 }
 
 - (void)viewDidLoad
@@ -63,17 +66,11 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.title = @"Twitter Alert";
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.labelText = NSLocalizedString(@"Loading following", @"HUD Label: Loading");
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        TwitterRequest *twitterRequest = [[TwitterRequest alloc] init];
-        twitterRequest.delegate = self;
-        [twitterRequest retrieveTwitterFollowers];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-        });
-    });
-
-
+    hud.labelText = NSLocalizedString(@"Loading followings", @"HUD Label: Loading");
+    [hud show:YES];
+    TwitterRequest *twitterRequest = [[TwitterRequest alloc] init];
+    twitterRequest.delegate = self;
+    [twitterRequest retrieveTwitterFollowers];
 }
 
 - (void)didReceiveMemoryWarning
