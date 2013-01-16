@@ -62,7 +62,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.title = @"Twitter Alert";
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = NSLocalizedString(@"Loading following", @"HUD Label: Loading");
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         TwitterRequest *twitterRequest = [[TwitterRequest alloc] init];
         twitterRequest.delegate = self;

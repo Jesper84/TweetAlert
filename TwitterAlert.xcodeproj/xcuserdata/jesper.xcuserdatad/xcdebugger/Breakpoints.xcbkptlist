@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TwitterAlert/TwitterRequest.m"
-         timestampString = "379880562.765511"
+         timestampString = "380062144.175344"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "101"
-         endingLineNumber = "101"
+         startingLineNumber = "108"
+         endingLineNumber = "108"
          landmarkName = "-retrieveUsernamesFromIds:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,12 +21,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TwitterAlert/ViewController.m"
-         timestampString = "380060144.761837"
+         timestampString = "380062144.175344"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "54"
-         endingLineNumber = "54"
-         landmarkName = "-twitterRequestDone:"
+         startingLineNumber = "47"
+         endingLineNumber = "47"
+         landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
