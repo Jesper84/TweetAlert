@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		240D1AC716A87C3400128765 /* NSMutableDictionary+SwitchStates.m in Sources */ = {isa = PBXBuildFile; fileRef = 240D1AC616A87C3400128765 /* NSMutableDictionary+SwitchStates.m */; };
 		243AFC4D16A5DC4000F21550 /* FollowingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 243AFC4C16A5DC4000F21550 /* FollowingCell.xib */; };
 		243AFC5116A5DCEF00F21550 /* FollowingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 243AFC5016A5DCEF00F21550 /* FollowingCell.m */; };
 		24B35D6816A747440089C83E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B35D6716A747440089C83E /* MBProgressHUD.m */; };
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		240D1AC516A87C3400128765 /* NSMutableDictionary+SwitchStates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+SwitchStates.h"; sourceTree = "<group>"; };
+		240D1AC616A87C3400128765 /* NSMutableDictionary+SwitchStates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+SwitchStates.m"; sourceTree = "<group>"; };
 		243AFC4C16A5DC4000F21550 /* FollowingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowingCell.xib; sourceTree = "<group>"; };
 		243AFC4F16A5DCEF00F21550 /* FollowingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowingCell.h; sourceTree = "<group>"; };
 		243AFC5016A5DCEF00F21550 /* FollowingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowingCell.m; sourceTree = "<group>"; };
@@ -104,6 +107,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		240D1AC816A87D8A00128765 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				240D1AC516A87C3400128765 /* NSMutableDictionary+SwitchStates.h */,
+				240D1AC616A87C3400128765 /* NSMutableDictionary+SwitchStates.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		24B35D6416A7471A0089C83E /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +172,7 @@
 				243AFC4C16A5DC4000F21550 /* FollowingCell.xib */,
 				243AFC4F16A5DCEF00F21550 /* FollowingCell.h */,
 				243AFC5016A5DCEF00F21550 /* FollowingCell.m */,
+				240D1AC816A87D8A00128765 /* Categories */,
 			);
 			path = TwitterAlert;
 			sourceTree = "<group>";
@@ -333,6 +346,7 @@
 				24CA10E116A3074600B153BE /* TwitterRequest.m in Sources */,
 				243AFC5116A5DCEF00F21550 /* FollowingCell.m in Sources */,
 				24B35D6816A747440089C83E /* MBProgressHUD.m in Sources */,
+				240D1AC716A87C3400128765 /* NSMutableDictionary+SwitchStates.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

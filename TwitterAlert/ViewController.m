@@ -17,9 +17,14 @@
 @end
 
 @implementation ViewController
-@synthesize followingTableView, followings;
+@synthesize followingTableView, followings, switchStates;
 - (int) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [self.followings count];
+}
+
+- (void)toggleSwitch:(UISwitch *)theSwitch{
+    [switchStates setBool:theSwitch.isOn forKey:[NSString stringWithFormat:@"%d",theSwitch.superview.tag]];
+    Following *following = [followings objectAtIndex:theSwitch.superview.tag];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -34,7 +39,13 @@
     Following *following = [self.followings objectAtIndex:indexPath.row];
     cell.username.text = following.username;
     cell.handleText.text = following.handle;
-    cell.onOffSwitch.on = NO;
+    
+    UISwitch *switchView = (UISwitch *)[cell viewWithTag:666];
+    if (![[switchView allTargets] count]) {
+        [switchView addTarget:self action:@selector(toggleSwitch:) forControlEvents:UIControlEventValueChanged];
+    }
+    
+    switchView.on = [switchStates boolForKey:[NSString stringWithFormat:@"%d",indexPath.row]];
 
     if (following.image) {
         cell.image.image = following.image;
@@ -51,6 +62,7 @@
     if ([indexPath row] == ((NSIndexPath *) [[followingTableView indexPathsForVisibleRows] lastObject]).row) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     }
+    cell.contentView.tag = indexPath.row;
     return cell;
 }
 
@@ -63,6 +75,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    switchStates = [NSMutableDictionary dictionary];
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.title = @"Twitter Alert";
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];

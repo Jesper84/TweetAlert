@@ -78,7 +78,6 @@
     for (NSArray *array in idArrays) {
         NSString *urlString = [NSString stringWithFormat:@"https://api.twitter.com/1/users/lookup.json?user_id=%@",[array componentsJoinedByString:@","]];
         NSURL *url = [NSURL URLWithString:urlString];
-        //        NSLog(@"URL: %@", url);
         
         SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodPOST URL:url parameters:nil];
         [request setAccount:self.twitterAccount];
@@ -98,7 +97,6 @@
             }
             if(counter == ([idArrays count]-1)){
                 self.fetchDone = YES;
-                NSLog(@"Array: %@", self.followings);
                 [delegate twitterRequestDone:self.followings];
             }
             counter++;
