@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		240D1AC716A87C3400128765 /* NSMutableDictionary+SwitchStates.m in Sources */ = {isa = PBXBuildFile; fileRef = 240D1AC616A87C3400128765 /* NSMutableDictionary+SwitchStates.m */; };
+		240D1ACB16A8852D00128765 /* wrench.png in Resources */ = {isa = PBXBuildFile; fileRef = 240D1AC916A8852D00128765 /* wrench.png */; };
+		240D1ACC16A8852D00128765 /* wrench@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 240D1ACA16A8852D00128765 /* wrench@2x.png */; };
 		243AFC4D16A5DC4000F21550 /* FollowingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 243AFC4C16A5DC4000F21550 /* FollowingCell.xib */; };
 		243AFC5116A5DCEF00F21550 /* FollowingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 243AFC5016A5DCEF00F21550 /* FollowingCell.m */; };
 		24B35D6816A747440089C83E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B35D6716A747440089C83E /* MBProgressHUD.m */; };
@@ -46,6 +48,8 @@
 /* Begin PBXFileReference section */
 		240D1AC516A87C3400128765 /* NSMutableDictionary+SwitchStates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+SwitchStates.h"; sourceTree = "<group>"; };
 		240D1AC616A87C3400128765 /* NSMutableDictionary+SwitchStates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+SwitchStates.m"; sourceTree = "<group>"; };
+		240D1AC916A8852D00128765 /* wrench.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wrench.png; sourceTree = "<group>"; };
+		240D1ACA16A8852D00128765 /* wrench@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wrench@2x.png"; sourceTree = "<group>"; };
 		243AFC4C16A5DC4000F21550 /* FollowingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowingCell.xib; sourceTree = "<group>"; };
 		243AFC4F16A5DCEF00F21550 /* FollowingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowingCell.h; sourceTree = "<group>"; };
 		243AFC5016A5DCEF00F21550 /* FollowingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowingCell.m; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 		24CA10A716A306A100B153BE /* TwitterAlert */ = {
 			isa = PBXGroup;
 			children = (
+				240D1AC916A8852D00128765 /* wrench.png */,
+				240D1ACA16A8852D00128765 /* wrench@2x.png */,
 				24B35D6416A7471A0089C83E /* MBProgressHUD */,
 				24CA10E216A3074B00B153BE /* Model */,
 				24CA10E316A3075200B153BE /* Service */,
@@ -305,6 +311,8 @@
 				24CA10B816A306A100B153BE /* Default-568h@2x.png in Resources */,
 				24CA10BB16A306A100B153BE /* MainStoryboard.storyboard in Resources */,
 				243AFC4D16A5DC4000F21550 /* FollowingCell.xib in Resources */,
+				240D1ACB16A8852D00128765 /* wrench.png in Resources */,
+				240D1ACC16A8852D00128765 /* wrench@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TwitterAlert/TwitterRequest.m"
-         timestampString = "380062144.175344"
+         timestampString = "380142100.463737"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "108"
-         endingLineNumber = "108"
+         startingLineNumber = "106"
+         endingLineNumber = "106"
          landmarkName = "-retrieveUsernamesFromIds:"
          landmarkType = "5">
       </FileBreakpoint>
