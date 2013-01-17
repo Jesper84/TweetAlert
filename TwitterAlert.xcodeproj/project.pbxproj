@@ -10,6 +10,7 @@
 		240D1AC716A87C3400128765 /* NSMutableDictionary+SwitchStates.m in Sources */ = {isa = PBXBuildFile; fileRef = 240D1AC616A87C3400128765 /* NSMutableDictionary+SwitchStates.m */; };
 		240D1ACB16A8852D00128765 /* wrench.png in Resources */ = {isa = PBXBuildFile; fileRef = 240D1AC916A8852D00128765 /* wrench.png */; };
 		240D1ACC16A8852D00128765 /* wrench@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 240D1ACA16A8852D00128765 /* wrench@2x.png */; };
+		240D1ACF16A8A3A000128765 /* WatchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 240D1ACE16A8A3A000128765 /* WatchModel.m */; };
 		243AFC4D16A5DC4000F21550 /* FollowingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 243AFC4C16A5DC4000F21550 /* FollowingCell.xib */; };
 		243AFC5116A5DCEF00F21550 /* FollowingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 243AFC5016A5DCEF00F21550 /* FollowingCell.m */; };
 		24B35D6816A747440089C83E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B35D6716A747440089C83E /* MBProgressHUD.m */; };
@@ -50,6 +51,8 @@
 		240D1AC616A87C3400128765 /* NSMutableDictionary+SwitchStates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+SwitchStates.m"; sourceTree = "<group>"; };
 		240D1AC916A8852D00128765 /* wrench.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wrench.png; sourceTree = "<group>"; };
 		240D1ACA16A8852D00128765 /* wrench@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wrench@2x.png"; sourceTree = "<group>"; };
+		240D1ACD16A8A3A000128765 /* WatchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WatchModel.h; sourceTree = "<group>"; };
+		240D1ACE16A8A3A000128765 /* WatchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WatchModel.m; sourceTree = "<group>"; };
 		243AFC4C16A5DC4000F21550 /* FollowingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowingCell.xib; sourceTree = "<group>"; };
 		243AFC4F16A5DCEF00F21550 /* FollowingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowingCell.h; sourceTree = "<group>"; };
 		243AFC5016A5DCEF00F21550 /* FollowingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowingCell.m; sourceTree = "<group>"; };
@@ -219,6 +222,8 @@
 		24CA10E216A3074B00B153BE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				240D1ACD16A8A3A000128765 /* WatchModel.h */,
+				240D1ACE16A8A3A000128765 /* WatchModel.m */,
 				24CA10DC16A3074500B153BE /* Following.h */,
 				24CA10DD16A3074500B153BE /* Following.m */,
 			);
@@ -355,6 +360,7 @@
 				243AFC5116A5DCEF00F21550 /* FollowingCell.m in Sources */,
 				24B35D6816A747440089C83E /* MBProgressHUD.m in Sources */,
 				240D1AC716A87C3400128765 /* NSMutableDictionary+SwitchStates.m in Sources */,
+				240D1ACF16A8A3A000128765 /* WatchModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

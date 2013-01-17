@@ -14,15 +14,14 @@
 #import "MBProgressHUD.h"
 
 @implementation ViewController
-@synthesize followingTableView, followings, switchStates;
+@synthesize followingTableView, followings, switchStates, watchModel;
 - (int) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [self.followings count];
 }
 
 - (void)toggleSwitch:(UISwitch *)theSwitch{
     [switchStates setBool:theSwitch.isOn forKey:[NSString stringWithFormat:@"%d",theSwitch.superview.tag]];
-    Following *following = [followings objectAtIndex:theSwitch.superview.tag];
-    NSLog(@"Handle switched: %@",following.handle);
+    [watchModel save:switchStates];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -77,7 +76,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    switchStates = [NSMutableDictionary dictionary];
+    watchModel = [[WatchModel alloc] init];
+    switchStates = [watchModel getSwitchStates];
+    if(!switchStates){
+        switchStates = [NSMutableDictionary dictionary];
+    }
+    
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.title = @"Twitter Alert";
     UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"wrench"] style:UIBarButtonItemStyleBordered target:self action:@selector(showSettings:)];
