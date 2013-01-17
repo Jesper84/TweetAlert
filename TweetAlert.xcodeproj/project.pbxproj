@@ -58,14 +58,14 @@
 		243AFC5016A5DCEF00F21550 /* FollowingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowingCell.m; sourceTree = "<group>"; };
 		24B35D6616A747440089C83E /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		24B35D6716A747440089C83E /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		24CA109D16A306A100B153BE /* TwitterAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		24CA109D16A306A100B153BE /* TweetAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweetAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24CA10A116A306A100B153BE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		24CA10A316A306A100B153BE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		24CA10A516A306A100B153BE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		24CA10A916A306A100B153BE /* TwitterAlert-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TwitterAlert-Info.plist"; sourceTree = "<group>"; };
+		24CA10A916A306A100B153BE /* TweetAlert-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TweetAlert-Info.plist"; sourceTree = "<group>"; };
 		24CA10AB16A306A100B153BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		24CA10AD16A306A100B153BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		24CA10AF16A306A100B153BE /* TwitterAlert-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TwitterAlert-Prefix.pch"; sourceTree = "<group>"; };
+		24CA10AF16A306A100B153BE /* TweetAlert-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TweetAlert-Prefix.pch"; sourceTree = "<group>"; };
 		24CA10B016A306A100B153BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		24CA10B116A306A100B153BE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		24CA10B316A306A100B153BE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -74,9 +74,9 @@
 		24CA10BA16A306A100B153BE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		24CA10BC16A306A100B153BE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		24CA10BD16A306A100B153BE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		24CA10C416A306A100B153BE /* TwitterAlertTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwitterAlertTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		24CA10C416A306A100B153BE /* TweetAlertTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TweetAlertTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24CA10C516A306A100B153BE /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		24CA10CD16A306A100B153BE /* TwitterAlertTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TwitterAlertTests-Info.plist"; sourceTree = "<group>"; };
+		24CA10CD16A306A100B153BE /* TweetAlertTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TweetAlertTests-Info.plist"; sourceTree = "<group>"; };
 		24CA10CF16A306A100B153BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		24CA10D116A306A100B153BE /* TwitterAlertTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwitterAlertTests.h; sourceTree = "<group>"; };
 		24CA10D216A306A100B153BE /* TwitterAlertTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwitterAlertTests.m; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 		24CA109216A306A100B153BE = {
 			isa = PBXGroup;
 			children = (
-				24CA10A716A306A100B153BE /* TwitterAlert */,
+				24CA10A716A306A100B153BE /* TweetAlert */,
 				24CA10CB16A306A100B153BE /* TwitterAlertTests */,
 				24CA10A016A306A100B153BE /* Frameworks */,
 				24CA109E16A306A100B153BE /* Products */,
@@ -145,8 +145,8 @@
 		24CA109E16A306A100B153BE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				24CA109D16A306A100B153BE /* TwitterAlert.app */,
-				24CA10C416A306A100B153BE /* TwitterAlertTests.octest */,
+				24CA109D16A306A100B153BE /* TweetAlert.app */,
+				24CA10C416A306A100B153BE /* TweetAlertTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -164,7 +164,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		24CA10A716A306A100B153BE /* TwitterAlert */ = {
+		24CA10A716A306A100B153BE /* TweetAlert */ = {
 			isa = PBXGroup;
 			children = (
 				240D1AC916A8852D00128765 /* wrench.png */,
@@ -183,16 +183,17 @@
 				243AFC5016A5DCEF00F21550 /* FollowingCell.m */,
 				240D1AC816A87D8A00128765 /* Categories */,
 			);
+			name = TweetAlert;
 			path = TwitterAlert;
 			sourceTree = "<group>";
 		};
 		24CA10A816A306A100B153BE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				24CA10A916A306A100B153BE /* TwitterAlert-Info.plist */,
+				24CA10A916A306A100B153BE /* TweetAlert-Info.plist */,
 				24CA10AA16A306A100B153BE /* InfoPlist.strings */,
 				24CA10AD16A306A100B153BE /* main.m */,
-				24CA10AF16A306A100B153BE /* TwitterAlert-Prefix.pch */,
+				24CA10AF16A306A100B153BE /* TweetAlert-Prefix.pch */,
 				24CA10B316A306A100B153BE /* Default.png */,
 				24CA10B516A306A100B153BE /* Default@2x.png */,
 				24CA10B716A306A100B153BE /* Default-568h@2x.png */,
@@ -213,7 +214,7 @@
 		24CA10CC16A306A100B153BE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				24CA10CD16A306A100B153BE /* TwitterAlertTests-Info.plist */,
+				24CA10CD16A306A100B153BE /* TweetAlertTests-Info.plist */,
 				24CA10CE16A306A100B153BE /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -242,9 +243,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		24CA109C16A306A100B153BE /* TwitterAlert */ = {
+		24CA109C16A306A100B153BE /* TweetAlert */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 24CA10D616A306A100B153BE /* Build configuration list for PBXNativeTarget "TwitterAlert" */;
+			buildConfigurationList = 24CA10D616A306A100B153BE /* Build configuration list for PBXNativeTarget "TweetAlert" */;
 			buildPhases = (
 				24CA109916A306A100B153BE /* Sources */,
 				24CA109A16A306A100B153BE /* Frameworks */,
@@ -254,14 +255,14 @@
 			);
 			dependencies = (
 			);
-			name = TwitterAlert;
+			name = TweetAlert;
 			productName = TwitterAlert;
-			productReference = 24CA109D16A306A100B153BE /* TwitterAlert.app */;
+			productReference = 24CA109D16A306A100B153BE /* TweetAlert.app */;
 			productType = "com.apple.product-type.application";
 		};
-		24CA10C316A306A100B153BE /* TwitterAlertTests */ = {
+		24CA10C316A306A100B153BE /* TweetAlertTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 24CA10D916A306A100B153BE /* Build configuration list for PBXNativeTarget "TwitterAlertTests" */;
+			buildConfigurationList = 24CA10D916A306A100B153BE /* Build configuration list for PBXNativeTarget "TweetAlertTests" */;
 			buildPhases = (
 				24CA10BF16A306A100B153BE /* Sources */,
 				24CA10C016A306A100B153BE /* Frameworks */,
@@ -273,9 +274,9 @@
 			dependencies = (
 				24CA10CA16A306A100B153BE /* PBXTargetDependency */,
 			);
-			name = TwitterAlertTests;
+			name = TweetAlertTests;
 			productName = TwitterAlertTests;
-			productReference = 24CA10C416A306A100B153BE /* TwitterAlertTests.octest */;
+			productReference = 24CA10C416A306A100B153BE /* TweetAlertTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -287,7 +288,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = Tallisoft.dk;
 			};
-			buildConfigurationList = 24CA109716A306A100B153BE /* Build configuration list for PBXProject "TwitterAlert" */;
+			buildConfigurationList = 24CA109716A306A100B153BE /* Build configuration list for PBXProject "TweetAlert" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -299,8 +300,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				24CA109C16A306A100B153BE /* TwitterAlert */,
-				24CA10C316A306A100B153BE /* TwitterAlertTests */,
+				24CA109C16A306A100B153BE /* TweetAlert */,
+				24CA10C316A306A100B153BE /* TweetAlertTests */,
 			);
 		};
 /* End PBXProject section */
@@ -377,7 +378,7 @@
 /* Begin PBXTargetDependency section */
 		24CA10CA16A306A100B153BE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 24CA109C16A306A100B153BE /* TwitterAlert */;
+			target = 24CA109C16A306A100B153BE /* TweetAlert */;
 			targetProxy = 24CA10C916A306A100B153BE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -464,9 +465,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TwitterAlert/TwitterAlert-Prefix.pch";
-				INFOPLIST_FILE = "TwitterAlert/TwitterAlert-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "TwitterAlert/TweetAlert-Prefix.pch";
+				INFOPLIST_FILE = "TwitterAlert/TweetAlert-Info.plist";
+				PRODUCT_NAME = TweetAlert;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -475,9 +476,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TwitterAlert/TwitterAlert-Prefix.pch";
-				INFOPLIST_FILE = "TwitterAlert/TwitterAlert-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "TwitterAlert/TweetAlert-Prefix.pch";
+				INFOPLIST_FILE = "TwitterAlert/TweetAlert-Info.plist";
+				PRODUCT_NAME = TweetAlert;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -492,8 +493,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TwitterAlert/TwitterAlert-Prefix.pch";
-				INFOPLIST_FILE = "TwitterAlertTests/TwitterAlertTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "TwitterAlertTests/TweetAlertTests-Info.plist";
+				PRODUCT_NAME = TweetAlertTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -509,8 +510,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TwitterAlert/TwitterAlert-Prefix.pch";
-				INFOPLIST_FILE = "TwitterAlertTests/TwitterAlertTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "TwitterAlertTests/TweetAlertTests-Info.plist";
+				PRODUCT_NAME = TweetAlertTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -519,7 +520,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		24CA109716A306A100B153BE /* Build configuration list for PBXProject "TwitterAlert" */ = {
+		24CA109716A306A100B153BE /* Build configuration list for PBXProject "TweetAlert" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				24CA10D416A306A100B153BE /* Debug */,
@@ -528,7 +529,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		24CA10D616A306A100B153BE /* Build configuration list for PBXNativeTarget "TwitterAlert" */ = {
+		24CA10D616A306A100B153BE /* Build configuration list for PBXNativeTarget "TweetAlert" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				24CA10D716A306A100B153BE /* Debug */,
@@ -537,7 +538,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		24CA10D916A306A100B153BE /* Build configuration list for PBXNativeTarget "TwitterAlertTests" */ = {
+		24CA10D916A306A100B153BE /* Build configuration list for PBXNativeTarget "TweetAlertTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				24CA10DA16A306A100B153BE /* Debug */,

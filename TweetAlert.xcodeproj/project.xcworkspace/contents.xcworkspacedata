@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:TwitterAlert.xcodeproj">
+      location = "self:TweetAlert.xcodeproj">
    </FileRef>
 </Workspace>
