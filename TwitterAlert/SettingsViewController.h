@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface SettingsViewController : UIViewController
-
+@property (nonatomic, weak) IBOutlet UISlider *slider;
+@property (nonatomic, weak) IBOutlet UILabel *sliderLabel;
 - (IBAction)closeSettings:(id)sender;
+-(IBAction)sliderMoved:(id)sender;
 
 @end

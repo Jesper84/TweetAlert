@@ -55,6 +55,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="197" id="cn2-BW-neR"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="sliderMoved:" destination="SPb-m1-JQy" eventType="valueChanged" id="mzk-bN-WVw"/>
+                                </connections>
                             </slider>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uQl-o8-8j7">
                                 <items>
@@ -67,16 +70,27 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Minute(s)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jsm-6F-Sv1">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Jsm-6F-Sv1" firstAttribute="centerX" secondItem="5Jc-9v-Azz" secondAttribute="centerX" type="default" id="ROh-t0-C8Y"/>
                             <constraint firstItem="5Jc-9v-Azz" firstAttribute="top" secondItem="3zL-5C-HZY" secondAttribute="top" constant="178" id="T5B-Hw-auE"/>
+                            <constraint firstItem="Jsm-6F-Sv1" firstAttribute="top" secondItem="3zL-5C-HZY" secondAttribute="top" constant="223" id="TLv-F0-CqN"/>
+                            <constraint firstItem="Jsm-6F-Sv1" firstAttribute="centerX" secondItem="3zL-5C-HZY" secondAttribute="centerX" type="default" id="aAH-77-Q3h"/>
                             <constraint firstItem="5Jc-9v-Azz" firstAttribute="centerX" secondItem="uQl-o8-8j7" secondAttribute="centerX" type="default" id="gVf-UQ-LC9"/>
                             <constraint firstItem="uQl-o8-8j7" firstAttribute="top" secondItem="3zL-5C-HZY" secondAttribute="top" type="default" id="nsp-ej-JaT"/>
-                            <constraint firstItem="5Jc-9v-Azz" firstAttribute="centerX" secondItem="3zL-5C-HZY" secondAttribute="centerX" type="default" id="qt3-cP-Lyq"/>
                             <constraint firstItem="uQl-o8-8j7" firstAttribute="leading" secondItem="3zL-5C-HZY" secondAttribute="leading" type="default" id="rnj-Jl-6kX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="slider" destination="5Jc-9v-Azz" id="DlG-mw-XLc"/>
+                        <outlet property="sliderLabel" destination="Jsm-6F-Sv1" id="BAf-ki-Unw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WA9-gM-opr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -104,6 +118,26 @@
     <resources>
         <image name="wrench.png" width="24" height="24"/>
     </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="closeSettings:"/>
+                <relationship kind="action" name="sliderMoved:"/>
+                <relationship kind="outlet" name="slider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="sliderLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="followingTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

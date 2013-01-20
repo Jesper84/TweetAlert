@@ -11,6 +11,7 @@
 @interface WatchModel : NSObject
 
 @property (nonatomic, strong) NSMutableArray *watchedHandles;
+@property (nonatomic) float updateFrequency;
 
 - (void)saveWatchedHandles;
 - (void)loadWatchedHandles;
