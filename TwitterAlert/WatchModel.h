@@ -10,6 +10,8 @@
 #import "NSMutableDictionary+SwitchStates.h"
 @interface WatchModel : NSObject
 
+@property (nonatomic, strong) NSMutableArray *watchedHandles;
+
 - (void)save:(NSMutableDictionary *)switchStates;
 - (NSMutableDictionary *)getSwitchStates;
 

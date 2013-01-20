@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "24CA109C16A306A100B153BE"
-               BuildableName = "TwitterAlert.app"
+               BuildableName = "TweetAlert.app"
                BlueprintName = "TweetAlert"
                ReferencedContainer = "container:TweetAlert.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "24CA10C316A306A100B153BE"
-               BuildableName = "TwitterAlertTests.octest"
+               BuildableName = "TweetAlertTests.octest"
                BlueprintName = "TweetAlertTests"
                ReferencedContainer = "container:TweetAlert.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "24CA109C16A306A100B153BE"
-            BuildableName = "TwitterAlert.app"
+            BuildableName = "TweetAlert.app"
             BlueprintName = "TweetAlert"
             ReferencedContainer = "container:TweetAlert.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "24CA109C16A306A100B153BE"
-            BuildableName = "TwitterAlert.app"
+            BuildableName = "TweetAlert.app"
             BlueprintName = "TweetAlert"
             ReferencedContainer = "container:TweetAlert.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "24CA109C16A306A100B153BE"
-            BuildableName = "TwitterAlert.app"
+            BuildableName = "TweetAlert.app"
             BlueprintName = "TweetAlert"
             ReferencedContainer = "container:TweetAlert.xcodeproj">
          </BuildableReference>

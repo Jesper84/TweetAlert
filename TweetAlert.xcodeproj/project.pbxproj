@@ -13,6 +13,7 @@
 		240D1ACF16A8A3A000128765 /* WatchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 240D1ACE16A8A3A000128765 /* WatchModel.m */; };
 		243AFC4D16A5DC4000F21550 /* FollowingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 243AFC4C16A5DC4000F21550 /* FollowingCell.xib */; };
 		243AFC5116A5DCEF00F21550 /* FollowingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 243AFC5016A5DCEF00F21550 /* FollowingCell.m */; };
+		246300CA16AC61CB00B16DD7 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246300C916AC61CB00B16DD7 /* SettingsViewController.m */; };
 		24B35D6816A747440089C83E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B35D6716A747440089C83E /* MBProgressHUD.m */; };
 		24CA10A216A306A100B153BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24CA10A116A306A100B153BE /* UIKit.framework */; };
 		24CA10A416A306A100B153BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24CA10A316A306A100B153BE /* Foundation.framework */; };
@@ -56,6 +57,8 @@
 		243AFC4C16A5DC4000F21550 /* FollowingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowingCell.xib; sourceTree = "<group>"; };
 		243AFC4F16A5DCEF00F21550 /* FollowingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowingCell.h; sourceTree = "<group>"; };
 		243AFC5016A5DCEF00F21550 /* FollowingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowingCell.m; sourceTree = "<group>"; };
+		246300C816AC61CB00B16DD7 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		246300C916AC61CB00B16DD7 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		24B35D6616A747440089C83E /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		24B35D6716A747440089C83E /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		24CA109D16A306A100B153BE /* TweetAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweetAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +185,8 @@
 				243AFC4F16A5DCEF00F21550 /* FollowingCell.h */,
 				243AFC5016A5DCEF00F21550 /* FollowingCell.m */,
 				240D1AC816A87D8A00128765 /* Categories */,
+				246300C816AC61CB00B16DD7 /* SettingsViewController.h */,
+				246300C916AC61CB00B16DD7 /* SettingsViewController.m */,
 			);
 			name = TweetAlert;
 			path = TwitterAlert;
@@ -362,6 +367,7 @@
 				24B35D6816A747440089C83E /* MBProgressHUD.m in Sources */,
 				240D1AC716A87C3400128765 /* NSMutableDictionary+SwitchStates.m in Sources */,
 				240D1ACF16A8A3A000128765 /* WatchModel.m in Sources */,
+				246300CA16AC61CB00B16DD7 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

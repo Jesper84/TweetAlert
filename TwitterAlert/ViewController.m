@@ -83,9 +83,6 @@
     }
     
 	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.title = @"Twitter Alert";
-    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"wrench"] style:UIBarButtonItemStyleBordered target:self action:@selector(showSettings:)];
-    self.navigationItem.rightBarButtonItem = settingsButton;
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.labelText = NSLocalizedString(@"Loading followings", @"HUD Label: Loading");

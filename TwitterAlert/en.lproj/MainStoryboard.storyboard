@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--View Controller - TweetAlert-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
@@ -28,7 +28,13 @@
                             <constraint firstItem="3tn-Zk-Xr4" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="uqU-k9-LuI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="f6S-eA-w16"/>
+                    <navigationItem key="navigationItem" title="TweetAlert" id="f6S-eA-w16">
+                        <barButtonItem key="rightBarButtonItem" image="wrench.png" id="KBK-WT-XfX">
+                            <connections>
+                                <segue destination="SPb-m1-JQy" kind="modal" id="hxE-1j-61y"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="followingTableView" destination="3tn-Zk-Xr4" id="BPx-o4-NN1"/>
                     </connections>
@@ -36,6 +42,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="812" y="56"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="k3I-J0-cg8">
+            <objects>
+                <viewController id="SPb-m1-JQy" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3zL-5C-HZY">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5Jc-9v-Azz">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="197" id="cn2-BW-neR"/>
+                                </constraints>
+                            </slider>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uQl-o8-8j7">
+                                <items>
+                                    <navigationItem title="Settings" id="r8W-gT-uCA">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="Tb1-cz-5fW">
+                                            <connections>
+                                                <action selector="closeSettings:" destination="SPb-m1-JQy" id="Ttu-ps-f51"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5Jc-9v-Azz" firstAttribute="top" secondItem="3zL-5C-HZY" secondAttribute="top" constant="178" id="T5B-Hw-auE"/>
+                            <constraint firstItem="5Jc-9v-Azz" firstAttribute="centerX" secondItem="uQl-o8-8j7" secondAttribute="centerX" type="default" id="gVf-UQ-LC9"/>
+                            <constraint firstItem="uQl-o8-8j7" firstAttribute="top" secondItem="3zL-5C-HZY" secondAttribute="top" type="default" id="nsp-ej-JaT"/>
+                            <constraint firstItem="5Jc-9v-Azz" firstAttribute="centerX" secondItem="3zL-5C-HZY" secondAttribute="centerX" type="default" id="qt3-cP-Lyq"/>
+                            <constraint firstItem="uQl-o8-8j7" firstAttribute="leading" secondItem="3zL-5C-HZY" secondAttribute="leading" type="default" id="rnj-Jl-6kX"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WA9-gM-opr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1225" y="56"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JbF-sn-n4A">
@@ -56,6 +101,9 @@
             <point key="canvasLocation" x="376" y="56"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="wrench.png" width="24" height="24"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

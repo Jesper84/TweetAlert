@@ -9,7 +9,7 @@
 #import "WatchModel.h"
 #define kWatchesFile @"Documents/watchesFile"
 @implementation WatchModel
-
+@synthesize watchedHandles;
 - (void)save:(NSMutableDictionary *)switchStates{
     [switchStates writeToFile:[self getFilePath] atomically:YES];
 }
