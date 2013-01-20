@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) NSMutableArray *watchedHandles;
 
-- (void)save:(NSMutableDictionary *)switchStates;
-- (NSMutableDictionary *)getSwitchStates;
+- (void)saveWatchedHandles;
+- (void)loadWatchedHandles;
 
 @end

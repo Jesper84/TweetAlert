@@ -20,12 +20,19 @@
 }
 
 - (void)toggleSwitch:(UISwitch *)theSwitch{
-    [switchStates setBool:theSwitch.isOn forKey:[NSString stringWithFormat:@"%d",theSwitch.superview.tag]];
-    [watchModel save:switchStates];
+    
+    Following *following = [followings objectAtIndex:theSwitch.superview.tag];
+    if (theSwitch.isOn) {
+        [watchModel.watchedHandles addObject:following.handle];
+    }else{
+        [watchModel.watchedHandles removeObject:following.handle];
+    }
+
+    NSLog(@"Watched: %@", watchModel.watchedHandles);
+    [watchModel saveWatchedHandles];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    NSString *CellIdentifier = [NSString stringWithFormat:@"Cell%d",indexPath.row];
     NSString *CellIdentifier = @"FollowingCell";
     FollowingCell *cell = (FollowingCell *) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -42,7 +49,7 @@
         [switchView addTarget:self action:@selector(toggleSwitch:) forControlEvents:UIControlEventValueChanged];
     }
     
-    switchView.on = [switchStates boolForKey:[NSString stringWithFormat:@"%d",indexPath.row]];
+    switchView.on = [watchModel.watchedHandles containsObject:following.handle];
 
     if (following.image) {
         cell.image.image = following.image;
@@ -77,10 +84,7 @@
 {
     [super viewDidLoad];
     watchModel = [[WatchModel alloc] init];
-    switchStates = [watchModel getSwitchStates];
-    if(!switchStates){
-        switchStates = [NSMutableDictionary dictionary];
-    }
+    [watchModel loadWatchedHandles];
     
 	// Do any additional setup after loading the view, typically from a nib.
     

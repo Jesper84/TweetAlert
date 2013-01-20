@@ -9,13 +9,16 @@
 #import "WatchModel.h"
 #define kWatchesFile @"Documents/watchesFile"
 @implementation WatchModel
-@synthesize watchedHandles;
-- (void)save:(NSMutableDictionary *)switchStates{
-    [switchStates writeToFile:[self getFilePath] atomically:YES];
+@synthesize watchedHandles = _watchedHandles;
+- (void)saveWatchedHandles{
+    [_watchedHandles writeToFile:[self getFilePath] atomically:YES];
 }
 
-- (NSMutableDictionary *)getSwitchStates{
-    return [NSMutableDictionary dictionaryWithContentsOfFile:[self getFilePath]];
+- (void)loadWatchedHandles{
+    _watchedHandles = [NSMutableArray arrayWithContentsOfFile:[self getFilePath]];
+    if (!_watchedHandles) {
+        _watchedHandles = [NSMutableArray array];
+    }
 }
 
 - (NSString *)getFilePath{
