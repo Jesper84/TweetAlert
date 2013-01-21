@@ -14,7 +14,7 @@
 #import "MBProgressHUD.h"
 
 @implementation ViewController
-@synthesize followingTableView, followings, switchStates, watchModel;
+@synthesize followingTableView, followings, watchModel;
 - (int) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [self.followings count];
 }
