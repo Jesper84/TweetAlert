@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NSMutableDictionary+SwitchStates.h"
 @interface WatchModel : NSObject
 
 @property (nonatomic, strong) NSMutableArray *watchedHandles;
@@ -15,5 +14,6 @@
 
 - (void)saveWatchedHandles;
 - (void)loadWatchedHandles;
+- (void)startWatching;
 
 @end

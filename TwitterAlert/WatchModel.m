@@ -7,11 +7,17 @@
 //
 
 #import "WatchModel.h"
+#import "TwitterRequest.h"
 #define kWatchesFile @"Documents/watchesFile"
 #define kUpdateFrequencyFile @"Documents/updateFrequencyFile"
 @implementation WatchModel
 @synthesize watchedHandles = _watchedHandles;
 @synthesize updateFrequency = _updateFrequency;
+
+- (void)startWatching{
+    
+}
+
 - (void)saveWatchedHandles{
     [_watchedHandles writeToFile:[self getWatchesFilePath] atomically:YES];
 }
