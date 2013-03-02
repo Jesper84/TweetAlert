@@ -13,10 +13,7 @@
 @implementation WatchModel
 @synthesize watchedHandles = _watchedHandles;
 @synthesize updateFrequency = _updateFrequency;
-
-- (void)startWatching{
-    
-}
+@synthesize sinceId = _sinceId;
 
 - (void)saveWatchedHandles{
     [_watchedHandles writeToFile:[self getWatchesFilePath] atomically:YES];

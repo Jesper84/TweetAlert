@@ -59,6 +59,28 @@
     
 }
 
+- (void)retrieveTimeline{
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:@"1" forKey:@"include_entities"];
+    
+    NSURL *url = [NSURL URLWithString:@"http://api.twitter.com/1/statuses/home_timeline.json"];
+    SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodGET URL:url parameters:params];
+    [request setAccount:self.twitterAccount];
+    [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error){
+        if (!responseData) {
+            NSLog(@"%@", error);
+        } else {
+            NSError *jsonError;
+            NSArray *timeline = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:&jsonError];
+            if (timeline) {
+                [delegate timelineFetched:timeline];
+            } else {
+                NSLog(@"%@", jsonError);
+            }
+        }
+    }];
+}
+
 - (void)retrieveUsernamesFromIds:(NSArray *)ids{
     NSMutableArray *idArrays = [NSMutableArray array];
     

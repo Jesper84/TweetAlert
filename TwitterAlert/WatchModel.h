@@ -11,9 +11,9 @@
 
 @property (nonatomic, strong) NSMutableArray *watchedHandles;
 @property (nonatomic) float updateFrequency;
+@property (nonatomic, strong) NSString *sinceId;
 
 - (void)saveWatchedHandles;
 - (void)loadWatchedHandles;
-- (void)startWatching;
 
 @end

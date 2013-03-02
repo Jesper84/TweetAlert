@@ -14,4 +14,5 @@
 @property (nonatomic, strong) IBOutlet UITableView *followingTableView;
 @property (nonatomic, strong) NSArray *followings;
 @property (nonatomic, strong) WatchModel *watchModel;
+@property (nonatomic, strong) TwitterRequest *twitterRequest;
 @end

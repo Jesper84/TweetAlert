@@ -14,7 +14,7 @@
 #import "MBProgressHUD.h"
 
 @implementation ViewController
-@synthesize followingTableView, followings, watchModel;
+@synthesize followingTableView, followings, watchModel, twitterRequest;
 - (int) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [self.followings count];
 }
@@ -74,7 +74,45 @@
     NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"username" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
     self.followings = [followingArray sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]];
     [self.followingTableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
-    [watchModel startWatching];
+    [self startWatchingTimeline];
+}
+
+- (void)timelineFetched:(NSArray *)timeline{
+    int count = 0;
+    for (NSDictionary *tweet in timeline) {
+        if (count == 0) {
+            watchModel.sinceId = [tweet objectForKey:@"id"];
+        }
+        NSDictionary *user = [tweet objectForKey:@"user"];
+        NSLog(@"User: %@", [user objectForKey:@"screen_name"]);
+        NSString *username = [user objectForKey:@"screen_name"];
+        if ([watchModel.watchedHandles containsObject:[NSString stringWithFormat:@"@%@",username]]) {
+            NSLog(@"Oh yes!");
+            NSString *text = [tweet objectForKey:@"text"];
+            NSLog(@"%@ tweeted: %@", username, text);
+            if (![NSThread isMainThread]) {
+                NSLog(@"Error");
+            }else{
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Tweet!" message:[NSString stringWithFormat:@"%@ tweeted: %@",username,text] delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+                [alert show];
+            }
+        }
+        count++;
+    }
+}
+
+- (void)startWatchingTimeline{
+    if (![NSThread isMainThread]) {
+        [self performSelectorOnMainThread:@selector(startTimer) withObject:self waitUntilDone:NO];
+    }
+}
+
+- (void)startTimer{
+    [NSTimer scheduledTimerWithTimeInterval:2.0f target:self selector:@selector(watchTimeline) userInfo:nil repeats:NO];
+}
+
+- (void)watchTimeline{
+    [self.twitterRequest retrieveTimeline];
 }
 
 - (void)showSettings{
@@ -92,9 +130,9 @@
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.labelText = NSLocalizedString(@"Loading followings", @"HUD Label: Loading");
     [hud show:YES];
-    TwitterRequest *twitterRequest = [[TwitterRequest alloc] init];
-    twitterRequest.delegate = self;
-    [twitterRequest retrieveTwitterFollowers];
+    self.twitterRequest = [[TwitterRequest alloc] init];
+    self.twitterRequest.delegate = self;
+    [self.twitterRequest retrieveTwitterFollowers];
 }
 
 - (void)didReceiveMemoryWarning

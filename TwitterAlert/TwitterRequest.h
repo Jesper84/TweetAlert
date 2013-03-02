@@ -13,6 +13,7 @@
 @protocol TwitterRequestDelegate <NSObject>
 
 - (void)twitterRequestDone:(NSArray *)followingArray;
+- (void)timelineFetched:(NSArray *)timeline;
 
 @end
 @interface TwitterRequest : NSObject
@@ -24,5 +25,6 @@
 - (void)retrieveTwitterFollowers;
 - (void)retrieveFollowing;
 - (void)retrieveUsernamesFromIds:(NSArray *)ids;
+- (void)retrieveTimeline;
 
 @end
