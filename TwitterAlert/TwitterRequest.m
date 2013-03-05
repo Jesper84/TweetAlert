@@ -59,9 +59,12 @@
     
 }
 
-- (void)retrieveTimeline{
+- (void)retrieveTimeline:(NSString *)sinceId{
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     [params setObject:@"1" forKey:@"include_entities"];
+    if (sinceId) {
+        [params setObject:(NSString*)sinceId forKey:@"since_id"];
+    }
     
     NSURL *url = [NSURL URLWithString:@"http://api.twitter.com/1/statuses/home_timeline.json"];
     SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodGET URL:url parameters:params];

@@ -25,6 +25,6 @@
 - (void)retrieveTwitterFollowers;
 - (void)retrieveFollowing;
 - (void)retrieveUsernamesFromIds:(NSArray *)ids;
-- (void)retrieveTimeline;
+- (void)retrieveTimeline:(NSString *)sinceId;
 
 @end

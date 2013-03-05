@@ -12,8 +12,11 @@
 @property (nonatomic, strong) NSMutableArray *watchedHandles;
 @property (nonatomic) float updateFrequency;
 @property (nonatomic, strong) NSString *sinceId;
+@property (nonatomic, strong) NSMutableDictionary *settingsDictionary;
 
 - (void)saveWatchedHandles;
 - (void)loadWatchedHandles;
+- (void)saveSettingsDictionary;
+- (void)loadSettingsDictionary;
 
 @end

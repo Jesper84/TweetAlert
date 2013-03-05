@@ -9,14 +9,24 @@
 #import "WatchModel.h"
 #import "TwitterRequest.h"
 #define kWatchesFile @"Documents/watchesFile"
-#define kUpdateFrequencyFile @"Documents/updateFrequencyFile"
+#define kSettings @"Documents/settingsDictionary"
+#define kSinceId @"sinceId"
+#define kUpdateFrequency @"updateFrequency"
 @implementation WatchModel
 @synthesize watchedHandles = _watchedHandles;
 @synthesize updateFrequency = _updateFrequency;
 @synthesize sinceId = _sinceId;
+@synthesize settingsDictionary = _settingsDictionary;
 
 - (void)saveWatchedHandles{
     [_watchedHandles writeToFile:[self getWatchesFilePath] atomically:YES];
+}
+
+- (void)saveSettingsDictionary{
+    [_settingsDictionary setObject:_sinceId forKey:kSinceId];
+    [_settingsDictionary setObject:[NSString stringWithFormat:@"%f",_updateFrequency] forKey:kUpdateFrequency];
+    
+    [_settingsDictionary writeToFile:[self getSettingsDictionaryPath] atomically:YES];
 }
 
 - (void)loadWatchedHandles{
@@ -26,14 +36,22 @@
     }
 }
 
-//TODO plist to save properties like updatefrequency??
+- (void)loadSettingsDictionary{
+    _settingsDictionary = [NSMutableDictionary dictionaryWithContentsOfFile:[self getSettingsDictionaryPath]];
+    if(!_settingsDictionary){
+        _settingsDictionary = [NSMutableDictionary dictionary];
+    }else{
+        _sinceId = [_settingsDictionary objectForKey:kSinceId];
+        _updateFrequency = [[_settingsDictionary objectForKey:kUpdateFrequency] floatValue];
+    }
+}
 
 - (NSString *)getWatchesFilePath{
     return [NSHomeDirectory() stringByAppendingPathComponent:kWatchesFile];
 }
 
-- (NSString *)getUpdateFrequencyFilePath{
-    return [NSHomeDirectory() stringByAppendingPathComponent:kUpdateFrequencyFile];
+- (NSString *)getSettingsDictionaryPath{
+    return [NSHomeDirectory() stringByAppendingPathComponent:kSettings];
 }
 
 @end

@@ -12,9 +12,9 @@
 #import "Following.h"
 #import "FollowingCell.h"
 #import "MBProgressHUD.h"
-
+#define kFollowCellHeight 44.0
 @implementation ViewController
-@synthesize followingTableView, followings, watchModel, twitterRequest;
+@synthesize followingTableView, followings, watchModel, twitterRequest, selectedIndexes;
 - (int) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [self.followings count];
 }
@@ -81,49 +81,83 @@
     int count = 0;
     for (NSDictionary *tweet in timeline) {
         if (count == 0) {
-            watchModel.sinceId = [tweet objectForKey:@"id"];
+            watchModel.sinceId = [tweet objectForKey:@"id_str"];
         }
         NSDictionary *user = [tweet objectForKey:@"user"];
-        NSLog(@"User: %@", [user objectForKey:@"screen_name"]);
         NSString *username = [user objectForKey:@"screen_name"];
         if ([watchModel.watchedHandles containsObject:[NSString stringWithFormat:@"@%@",username]]) {
             NSLog(@"Oh yes!");
             NSString *text = [tweet objectForKey:@"text"];
             NSLog(@"%@ tweeted: %@", username, text);
+            NSString *alertText = [NSString stringWithFormat:@"%@ tweeted: %@", username, text];
             if (![NSThread isMainThread]) {
                 NSLog(@"Error");
+                [self performSelectorOnMainThread:@selector(showAlert:) withObject:alertText waitUntilDone:NO];
             }else{
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Tweet!" message:[NSString stringWithFormat:@"%@ tweeted: %@",username,text] delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-                [alert show];
+                [self showAlert:alertText];
             }
+            
         }
         count++;
     }
 }
 
+- (void)showAlert:(NSString *)alertText{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Tweet!" message:alertText delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    [alert show];
+}
+
 - (void)startWatchingTimeline{
     if (![NSThread isMainThread]) {
-        [self performSelectorOnMainThread:@selector(startTimer) withObject:self waitUntilDone:NO];
+        [self performSelectorOnMainThread:@selector(startTimer) withObject:nil waitUntilDone:NO];
     }
 }
 
 - (void)startTimer{
-    [NSTimer scheduledTimerWithTimeInterval:2.0f target:self selector:@selector(watchTimeline) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:10.0f target:self selector:@selector(watchTimeline) userInfo:nil repeats:YES];
 }
 
 - (void)watchTimeline{
-    [self.twitterRequest retrieveTimeline];
+    NSLog(@"Calling with id: %@", watchModel.sinceId);
+    [self.twitterRequest retrieveTimeline:watchModel.sinceId];
 }
 
 - (void)showSettings{
     
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if([self cellIsSelected:indexPath]){
+        return kFollowCellHeight * 2.0;
+    }
+    return kFollowCellHeight;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    BOOL isSelected = ![self cellIsSelected:indexPath];
+    NSNumber *selectedIndex = [NSNumber numberWithBool:isSelected];
+    [selectedIndexes setObject:selectedIndex forKey:indexPath];
+    
+    [tableView beginUpdates];
+    [tableView endUpdates];
+}
+
+- (BOOL)cellIsSelected:(NSIndexPath *)indexPath{
+    NSNumber *selectedIndex = [selectedIndexes objectForKey:indexPath];
+    return selectedIndex == nil ? NO : [selectedIndex boolValue];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    selectedIndexes = [[NSMutableDictionary alloc] init];
+    
     watchModel = [[WatchModel alloc] init];
     [watchModel loadWatchedHandles];
+    [watchModel loadSettingsDictionary];
     
 	// Do any additional setup after loading the view, typically from a nib.
     

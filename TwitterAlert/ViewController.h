@@ -15,4 +15,5 @@
 @property (nonatomic, strong) NSArray *followings;
 @property (nonatomic, strong) WatchModel *watchModel;
 @property (nonatomic, strong) TwitterRequest *twitterRequest;
+@property (nonatomic, strong) NSMutableDictionary *selectedIndexes;
 @end
