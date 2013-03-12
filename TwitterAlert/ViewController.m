@@ -113,7 +113,7 @@
 }
 
 - (void)startTimer{
-    [NSTimer scheduledTimerWithTimeInterval:60.0f target:self selector:@selector(watchTimeline) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:watchModel.updateFrequency target:self selector:@selector(watchTimeline) userInfo:nil repeats:YES];
 }
 
 - (void)watchTimeline{
@@ -154,7 +154,7 @@
     
     selectedIndexes = [[NSMutableDictionary alloc] init];
     
-    watchModel = [[WatchModel alloc] init];
+    watchModel = [WatchModel sharedInstance];
     [watchModel loadWatchedHandles];
     [watchModel loadSettingsDictionary];
     

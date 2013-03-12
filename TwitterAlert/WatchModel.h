@@ -13,7 +13,7 @@
 @property (nonatomic) float updateFrequency;
 @property (nonatomic, strong) NSString *sinceId;
 @property (nonatomic, strong) NSMutableDictionary *settingsDictionary;
-
++ (id)sharedInstance;
 - (void)saveWatchedHandles;
 - (void)loadWatchedHandles;
 - (void)saveSettingsDictionary;

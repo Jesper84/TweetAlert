@@ -15,7 +15,9 @@
 @implementation SettingsViewController
 @synthesize slider = _slider;
 @synthesize sliderLabel = _sliderLabel;
+@synthesize watchModel = _watchModel;
 - (IBAction)closeSettings:(id)sender{
+    [_watchModel setUpdateFrequency:[_slider value]*60.0f];
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -41,7 +43,10 @@
     [_slider setMaximumValue:30.0f];
     [_slider setMinimumValue:1.0f];
     [_slider setContinuous:YES];
-    [_slider setValue:5.0f];
+    WatchModel *model = [WatchModel sharedInstance];
+    float frequency = model.updateFrequency;
+    NSLog(@"Frequency: %f", frequency);
+    [_slider setValue:frequency/60];
     [self updateSliderLabel];
 }
 
@@ -49,6 +54,7 @@
 {
     [super viewDidLoad];
     [self setupSlider];
+    _watchModel = [WatchModel sharedInstance];
 }
 
 - (void)didReceiveMemoryWarning

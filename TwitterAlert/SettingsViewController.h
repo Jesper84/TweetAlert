@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WatchModel.h"
 
 @interface SettingsViewController : UIViewController
 @property (nonatomic, weak) IBOutlet UISlider *slider;
 @property (nonatomic, weak) IBOutlet UILabel *sliderLabel;
+@property (nonatomic, strong) WatchModel *watchModel;
 - (IBAction)closeSettings:(id)sender;
 -(IBAction)sliderMoved:(id)sender;
 
