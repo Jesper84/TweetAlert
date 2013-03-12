@@ -91,7 +91,6 @@
             NSLog(@"%@ tweeted: %@", username, text);
             NSString *alertText = [NSString stringWithFormat:@"%@ tweeted: %@", username, text];
             if (![NSThread isMainThread]) {
-                NSLog(@"Error");
                 [self performSelectorOnMainThread:@selector(showAlert:) withObject:alertText waitUntilDone:NO];
             }else{
                 [self showAlert:alertText];
@@ -114,7 +113,7 @@
 }
 
 - (void)startTimer{
-    [NSTimer scheduledTimerWithTimeInterval:10.0f target:self selector:@selector(watchTimeline) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:60.0f target:self selector:@selector(watchTimeline) userInfo:nil repeats:YES];
 }
 
 - (void)watchTimeline{

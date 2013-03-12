@@ -7,7 +7,7 @@
 //
 
 #import "SettingsViewController.h"
-
+#import "WatchModel.h"
 @interface SettingsViewController ()
 
 @end
